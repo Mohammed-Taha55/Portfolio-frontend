@@ -19,6 +19,13 @@ export default function Projects() {
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
         {/* DevTinder Project Card */}
         <div className="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-white/20 hover:scale-105 hover:shadow-pink-500/40 transition">
+          {/* Project Image */}
+          <img
+            src="https://img.icons8.com/?size=512&id=hp54uGDlrEZB&format=png"
+            alt="DevTinder Project"
+            className="w-full rounded-md mb-4 object-cover"
+          />
+
           <h3 className="text-xl font-bold mb-2 text-white">DevTinder</h3>
           <p className="text-gray-300 mb-4">
             A developer networking platform to connect coders with similar
@@ -37,3 +44,4 @@ export default function Projects() {
     </section>
   );
 }
+

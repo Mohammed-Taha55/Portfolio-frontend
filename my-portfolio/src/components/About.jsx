@@ -13,11 +13,16 @@ export default function About() {
           About Me
         </h2>
         <p className="text-gray-300 leading-relaxed text-lg animate-slideUp">
-          I’m a passionate full stack developer skilled in JavaScript, React,
-          Node.js, Express.js, Next.js, MongoDB, and more. I love creating
-          responsive, user-friendly applications and delivering high-quality
-          code that solves real-world problems. My goal is to build impactful
-          digital products that people love to use.
+         A self-driven and highly motivated BCA graduate with a strong
+foundation in computer applications and a deep interest in
+full-stack web development. I have independently built and
+deployed a production-ready full-stack project on AWS,
+showcasing hands-on experience in React, Node.js, MongoDB,
+and DevOps basics. Seeking an entry-level position where I
+can contribute to real-world projects, learn from experienced
+developers, and grow into a well-rounded software engineer.
+Passionate about solving problems, continuously improving,
+and adding value to a dynamic tech team.
         </p>
       </div>
 
