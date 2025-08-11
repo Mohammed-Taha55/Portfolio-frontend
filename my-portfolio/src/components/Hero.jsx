@@ -1,50 +1,64 @@
+import SectionWrapper from "./SectionWrapper";
 import profile from "../assets/profile.jpg";
 import Mohammed_Taha_CV from "../assets/Mohammed_Taha_CV.pdf";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-black">
-      
-      {/* Animated Gradient Blobs - Matching About */}
-      <div className="absolute inset-0">
-        <div className="absolute -top-20 left-10 w-80 h-80 bg-gradient-to-br from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] rounded-full blur-3xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-[#FDE68A] via-[#FCA5A5] to-[#F43F5E] rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      </div>
-
-      {/* Profile Card */}
-      <div className="relative z-10 bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-white/20 max-w-lg">
+    <SectionWrapper id="hero">
+      <div className="flex flex-col items-center">
         <img
           src={profile}
-          alt="Mohammed Taha"
-          className="w-40 h-40 rounded-full border-4 border-white shadow-lg mx-auto"
+          alt="Mohammed Taha profile photo"
+          className="w-52 h-52 sm:w-64 sm:h-64 rounded-full border-8 border-white shadow-xl mb-8"
         />
 
-        {/* Name with Gradient Text */}
-        <h1 className="text-5xl font-bold mt-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
+        <h1 className="text-6xl sm:text-7xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 mb-6">
           Mohammed Taha
         </h1>
 
-        <p className="text-xl mb-6 text-gray-300">
+        <p className="text-2xl sm:text-3xl text-center max-w-3xl mb-12">
           Full Stack Developer | Crafting Scalable Web Apps
         </p>
 
-        {/* Buttons with Glow */}
-        <div className="flex gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-6 mb-8">
           <a
             href="#projects"
-            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition shadow-lg hover:shadow-blue-500/50"
+            className="px-10 py-4 bg-blue-600 hover:bg-blue-700 rounded-full text-xl font-semibold shadow-lg transition shadow-blue-600/50 text-white text-center"
           >
             View My Work
           </a>
           <a
             href={Mohammed_Taha_CV}
             download="Mohammed_Taha_CV.pdf"
-            className="px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-500 hover:to-pink-500 rounded-lg transition shadow-lg hover:shadow-pink-500/50"
+            className="px-10 py-4 bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-500 hover:to-pink-500 rounded-full text-xl font-semibold shadow-lg transition shadow-pink-500/50 text-white text-center"
+            rel="noopener noreferrer"
           >
             Download CV
           </a>
         </div>
+
+        <div className="flex gap-6 justify-center mt-4">
+          <a
+            href="https://www.linkedin.com/in/mohammed-taha-aa449733a"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-gray-300 hover:text-blue-500 transition text-3xl"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/Mohammed-Taha55"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="text-gray-300 hover:text-gray-100 transition text-3xl"
+          >
+            <FaGithub />
+          </a>
+        </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

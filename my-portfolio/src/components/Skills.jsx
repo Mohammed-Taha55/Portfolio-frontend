@@ -1,8 +1,5 @@
 const skills = {
-  Frontend: [
-    "React", "TypeScript", "Tailwind CSS", 
-     "HTML", "CSS", "JavaScript"
-  ],
+  Frontend: ["React", "TypeScript", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
   Backend: ["Node.js", "Express", "Websocket", "Socket.io", "REST API"],
   "Database & ORM": ["PostgreSQL", "MongoDB", "Prisma", "Mongoose"],
   Devops: ["Git", "Docker", "Vercel", "AWS"],
@@ -11,62 +8,52 @@ const skills = {
 
 export default function Skills() {
   return (
-    <section className="relative py-20 bg-gray-950 text-white overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 pointer-events-none"></div>
+   <section
+  id="skills"
+  className="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 relative overflow-hidden w-full"
+>
+  {/* Gradient Blobs Background */}
+  <div className="absolute inset-0 -z-10">
+    <div className="absolute -top-20 left-10 w-80 h-80 bg-gradient-to-br from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] rounded-full blur-3xl opacity-30 animate-pulse"></div>
+    <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-[#FDE68A] via-[#FCA5A5] to-[#F43F5E] rounded-full blur-3xl opacity-30 animate-pulse"></div>
+  </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-5xl font-bold text-center text-purple-500 mb-12 animate-fadeDown">
-          Skills
-        </h2>
+  <div className="
+      relative z-10
+      max-w-5xl
+      mx-auto
+      w-full
+      bg-gradient-to-r from-purple-900/40 via-indigo-900/30 to-blue-900/40
+      backdrop-blur-lg
+      p-12 sm:p-16
+      rounded-3xl
+      shadow-2xl
+      border border-white/30
+      text-gray-200
+      transition-shadow duration-500
+      hover:shadow-indigo-500/50
+    "
+  >
+    <h2 className="text-5xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
+      Skills
+    </h2>
 
-        <div className="space-y-10">
-          {Object.entries(skills).map(([category, items], idx) => (
-            <div
-              key={category}
-              className={`animate-slideUp`}
-              style={{ animationDelay: `${idx * 0.2}s`, animationFillMode: 'both' }}
+    {Object.entries(skills).map(([category, items]) => (
+      <div key={category} className="mb-10">
+        <h3 className="text-2xl font-semibold mb-6 text-purple-400">{category}</h3>
+        <div className="flex flex-wrap gap-4">
+          {items.map((skill) => (
+            <span
+              key={skill}
+              className="px-5 py-3 border border-purple-500 rounded-lg hover:bg-purple-500 hover:text-white transition duration-300 cursor-default select-none"
             >
-              <h3 className="text-2xl font-semibold text-purple-400 mb-4">{category}</h3>
-              <div className="flex flex-wrap gap-3">
-                {items.map((skill, i) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500 hover:text-white transition duration-300"
-                    style={{ animation: `fadeIn 0.5s ease ${i * 0.05}s forwards`, opacity: 0 }}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+              {skill}
+            </span>
           ))}
         </div>
       </div>
-
-      {/* Tailwind Custom Animations */}
-      <style>
-        {`
-          @keyframes fadeDown {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-          .animate-fadeDown {
-            animation: fadeDown 0.6s ease forwards;
-          }
-          @keyframes slideUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-          .animate-slideUp {
-            animation: slideUp 0.6s ease forwards;
-          }
-          @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-          }
-        `}
-      </style>
-    </section>
+    ))}
+  </div>
+</section>
   );
 }
