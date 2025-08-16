@@ -57,7 +57,7 @@ export default function Projects() {
               alt="DevTinder Project"
               className="w-full rounded-md mb-6 object-cover"
             />
-            <h3 className="text-2xl font-bold mb-3 text-white">DevTinder</h3>
+            <h3 className="text-2xl font-bold mb-3 text-white">Netflix-GPT</h3>
             <p className="text-gray-300 mb-5">
               Developed a Netflix clone with GPT-search integration which recommends movies of user interests using OpenAI. 
             </p>
