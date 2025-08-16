@@ -51,6 +51,25 @@ export default function Projects() {
               View Project →
             </a>
           </div>
+          <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white/20 hover:scale-105 hover:shadow-pink-500/40 transition-transform duration-300">
+            <img
+              src="https://yt3.googleusercontent.com/CvgBA1ypUZNxOjiCX0l1V2FbAm7oSDPZE4YkMvkpT_4iLXQ3IXWVtBgWnznHxgtcUoj50TXqZA=s900-c-k-c0x00ffffff-no-rj"
+              alt="DevTinder Project"
+              className="w-full rounded-md mb-6 object-cover"
+            />
+            <h3 className="text-2xl font-bold mb-3 text-white">DevTinder</h3>
+            <p className="text-gray-300 mb-5">
+              Developed a Netflix clone with GPT-search integration which recommends movies of user interests using OpenAI. 
+            </p>
+            <a
+              href="http://netflix-gpt-bice-kappa.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:underline font-semibold"
+            >
+              View Project →
+            </a>
+          </div>
         </div>
       </div>
     </section>
