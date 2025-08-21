@@ -1,7 +1,7 @@
 const skills = {
   Frontend: ["React", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
   Backend: ["Node.js", "Express", "REST API"],
-  "Database & ORM": ["PostgreSQL", "MongoDB", "Prisma", "Mongoose"],
+  "Database & ORM": ["PostgreSQL", "MongoDB", "Prisma", "Mongoose","SQL"],
   Devops: ["Git", "Docker", "Vercel", "AWS"],
   "Other Tools": ["Postman", "Github"],
 };
