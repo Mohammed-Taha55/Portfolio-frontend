@@ -1,5 +1,5 @@
 const skills = {
-  Frontend: ["React", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
+  Frontend: ["React.js", "JavaScript","TypeScript","Tailwind CSS", "HTML", "CSS"],
   Backend: ["Node.js", "Express", "REST API"],
   "Database & ORM": ["PostgreSQL", "MongoDB", "Prisma", "Mongoose","SQL"],
   Devops: ["Git", "Docker", "Vercel", "AWS"],
