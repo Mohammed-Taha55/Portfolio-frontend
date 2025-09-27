@@ -2,7 +2,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 relative overflow-hidden"
+      className="py-12 flex flex-col justify-center px-6 sm:px-10 lg:px-20 relative overflow-hidden"
     >
       {/* Gradient Blobs Background */}
       <div className="absolute inset-0 -z-10">
@@ -63,6 +63,25 @@ export default function Projects() {
             </p>
             <a
               href="http://netflix-gpt-bice-kappa.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:underline font-semibold"
+            >
+              View Project →
+            </a>
+          </div>
+             <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white/20 hover:scale-105 hover:shadow-pink-500/40 transition-transform duration-300">
+            <img
+              src="https://img.etimg.com/thumb/width-1200,height-1200,imgsize-119044,resizemode-75,msid-116311752/wealth/invest/analysts-hike-earnings-estimates-for-these-9-stocks-share-price-could-give-double-digit-returns-in-2025.jpg"
+              alt="DevTinder Project"
+              className="w-full rounded-md mb-6 object-cover"
+            />
+            <h3 className="text-2xl font-bold mb-3 text-white">Stock Ticker</h3>
+            <p className="text-gray-300 mb-5">
+              Real-time stock tracking application with interactive charts 
+            </p>
+            <a
+              href="http://trade-brain-assignment.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-400 hover:underline font-semibold"

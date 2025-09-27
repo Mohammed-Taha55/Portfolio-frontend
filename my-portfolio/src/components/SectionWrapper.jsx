@@ -2,7 +2,7 @@ export default function SectionWrapper({ id, children }) {
   return (
     <section
       id={id}
-      className="min-h-screen flex flex-col justify-center px-6 sm:px-12 lg:px-24 relative overflow-hidden bg-black bg-opacity-40 backdrop-blur-md"
+      className="py-12 flex flex-col justify-center px-6 sm:px-12 lg:px-24 relative overflow-hidden bg-black bg-opacity-40 backdrop-blur-md"
     >
       {/* Gradient Blobs Background */}
       <div className="absolute inset-0 -z-10">

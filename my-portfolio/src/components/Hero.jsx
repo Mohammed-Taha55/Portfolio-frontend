@@ -6,7 +6,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 export default function Hero() {
   return (
     <SectionWrapper id="hero">
-      <div className="flex flex-col items-center">
+      <div className="py-12 flex flex-col items-center">
         <img
           src={profile}
           alt="Mohammed Taha profile photo"

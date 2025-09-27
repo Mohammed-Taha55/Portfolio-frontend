@@ -1,59 +1,11 @@
-import { useState } from "react";
+import { FaGithub, FaLinkedin, FaPhone } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Contact() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-    botField: "", // Honeypot field for spam bots
-  });
-  const [status, setStatus] = useState(""); // idle | sending | sent | error
-  const [errorMsg, setErrorMsg] = useState("");
-
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("sending");
-    setErrorMsg("");
-
-    try {
-      const res = await fetch(`${BACKEND_URL}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setStatus("error");
-        setErrorMsg(
-          data?.errors?.map((err) => err.msg).join(", ") ||
-          data?.message ||
-          "Something went wrong."
-        );
-        return;
-      }
-
-      setStatus("sent");
-      setForm({ name: "", email: "", message: "", botField: "" });
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-      setErrorMsg("Network error. Please try again.");
-    }
-  };
-
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 relative overflow-hidden"
+      className="py-12 flex flex-col justify-center px-6 sm:px-10 lg:px-20 relative overflow-hidden"
     >
       {/* Gradient Blobs Background */}
       <div className="absolute inset-0 -z-10">
@@ -64,7 +16,7 @@ export default function Contact() {
       <div
         className="
           relative z-10
-          max-w-5xl
+          max-w-4xl
           mx-auto
           bg-gradient-to-r from-purple-900/40 via-indigo-900/30 to-blue-900/40
           backdrop-blur-lg
@@ -80,72 +32,51 @@ export default function Contact() {
       >
         {/* Section Title */}
         <h2 className="text-5xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
-          Contact Me
+          Get in Touch
         </h2>
 
-        {/* Contact Form */}
-        <form
-          className="flex flex-col gap-6"
-          onSubmit={handleSubmit}
-        >
-          {/* Hidden Honeypot Field */}
-          <input
-            type="text"
-            name="botField"
-            value={form.botField}
-            onChange={handleChange}
-            className="hidden"
-            tabIndex="-1"
-            autoComplete="off"
-          />
+        {/* Contact Info */}
+        <div className="flex flex-col gap-8 text-lg sm:text-xl items-center">
+          <p className="flex items-center gap-3">
+            <MdEmail className="text-pink-400 text-2xl" />
+            <a
+              href="mailto:mohammedtaha10683@gmail.com"
+              className="hover:text-pink-400 transition"
+            >
+              mohammedtaha10683@gmail.com
+            </a>
+          </p>
 
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Your Name"
-            className="p-4 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Your Email"
-            className="p-4 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
-            required
-          />
-          <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Your Message"
-            className="p-4 rounded-lg bg-white/10 text-white placeholder-gray-400 h-40 resize-none focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
-            required
-          ></textarea>
+          <p className="flex items-center gap-3">
+            <FaPhone className="text-pink-400 text-2xl" />
+            <a
+              href="tel:+919019534549"
+              className="hover:text-pink-400 transition"
+            >
+              +91 90195 34549
+            </a>
+          </p>
 
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className={`px-8 py-4 rounded-lg font-semibold shadow-lg transition ${
-              status === "sending"
-                ? "bg-gray-600 cursor-not-allowed"
-                : "bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-500 hover:to-pink-500 hover:shadow-pink-500/60"
-            }`}
-          >
-            {status === "sending" ? "Sending..." : "Send Message"}
-          </button>
-
-          {/* Status Messages */}
-          {status === "sent" && (
-            <p className="text-green-400 text-center mt-4">✅ Message sent successfully!</p>
-          )}
-          {status === "error" && (
-            <p className="text-red-400 text-center mt-4">❌ {errorMsg}</p>
-          )}
-        </form>
+          {/* Extra links (GitHub + LinkedIn) */}
+          <div className="flex gap-8 mt-6">
+            <a
+              href="https://github.com/Mohammed-Taha55"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition text-2xl flex items-center gap-2"
+            >
+              <FaGithub /> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mohammed-taha-aa449733a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition text-2xl flex items-center gap-2"
+            >
+              <FaLinkedin /> LinkedIn
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

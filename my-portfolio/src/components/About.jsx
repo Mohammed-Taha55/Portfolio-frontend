@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 relative overflow-hidden"
+      className="py-12 flex flex-col justify-center px-6 sm:px-10 lg:px-20 relative overflow-hidden"
     >
       {/* Gradient Blobs Background */}
       <div className="absolute inset-0 -z-10">
