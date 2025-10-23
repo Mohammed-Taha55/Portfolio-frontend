@@ -72,10 +72,31 @@ export default function Projects() {
           </div>
              <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white/20 hover:scale-105 hover:shadow-pink-500/40 transition-transform duration-300">
             <img
+              src="https://ik.imagekit.io/5hquntidz/Screenshot%20(15).png?updatedAt=1761211764602"
+              alt="DevTinder Project"
+              className="w-full object-cover rounded-md mb-6"
+            />
+            
+            <h3 className="text-2xl font-bold mb-3 text-white">Agency-Website</h3>
+            <p className="text-gray-300 mb-5">
+             A modern, responsive agency website built with React and Tailwind CSS, featuring dark mode, smooth animations, and interactive components to showcase services, work, and team.
+            </p>
+            <a
+              href="https://agency-website-gray-mu.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:underline font-semibold"
+            >
+              View Project →
+            </a>
+          </div>
+             <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white/20 hover:scale-105 hover:shadow-pink-500/40 transition-transform duration-300">
+            <img
               src="https://img.etimg.com/thumb/width-1200,height-1200,imgsize-119044,resizemode-75,msid-116311752/wealth/invest/analysts-hike-earnings-estimates-for-these-9-stocks-share-price-could-give-double-digit-returns-in-2025.jpg"
               alt="DevTinder Project"
               className="w-full rounded-md mb-6 object-cover"
             />
+
             <h3 className="text-2xl font-bold mb-3 text-white">Stock Ticker</h3>
             <p className="text-gray-300 mb-5">
               Real-time stock tracking application with interactive charts 
